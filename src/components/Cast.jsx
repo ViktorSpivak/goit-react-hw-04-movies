@@ -13,9 +13,6 @@ class Cast extends Component {
 
   render() {
     const image = { width: "70px" };
-
-    console.log(this.state.castData);
-
     return (
       <ul>
         {this.state.castData &&
@@ -28,12 +25,11 @@ class Cast extends Component {
                   style={image}
                 ></img>
               </div>
-              <title>{el.name}</title>
+              <p>{el.name}</p>
               <p>Character:{el.character}</p>
             </li>
           ))}
       </ul>
-      //   <ul>{reviews && reviews.map((el, idx) => <li key={idx}>{el}</li>)}</ul>
     );
   }
 }

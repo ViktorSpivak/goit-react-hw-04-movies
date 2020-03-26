@@ -12,17 +12,17 @@ class Reviews extends Component {
   }
 
   render() {
-    console.log(this.state.reviewData);
-
+    const noReviews = "";
     return (
       <ul>
-        {this.state.reviewData &&
-          this.state.reviewData.map((el, idx) => (
-            <li key={idx}>
-              <h2>Author:{el.author}</h2>
-              <p>{el.content}</p>
-            </li>
-          ))}
+        {this.state.reviewData.length
+          ? this.state.reviewData.map((el, idx) => (
+              <li key={idx}>
+                <h2>Author:{el.author}</h2>
+                <p>{el.content}</p>
+              </li>
+            ))
+          : "We dont have any reviews for this movie"}
       </ul>
     );
   }

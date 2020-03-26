@@ -1,15 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
-const FilmList = ({ list }) => {
-  // console.log(match);
-
-  // >
+import { Link, withRouter } from "react-router-dom";
+const FilmList = ({ list, location }) => {
   return (
     <ul>
       {list &&
         list.map(elem => (
           <li key={elem.id}>
-            <Link to={`/movies/${elem.id}`}>
+            <Link
+              to={{ pathname: `/movie/${elem.id}`, state: { from: location } }}
+            >
               {elem.title || elem.original_title || elem.original_name}
             </Link>
           </li>
@@ -18,4 +17,4 @@ const FilmList = ({ list }) => {
   );
 };
 
-export default FilmList;
+export default withRouter(FilmList);
