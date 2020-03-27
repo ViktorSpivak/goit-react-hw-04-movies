@@ -7,7 +7,10 @@ const FilmList = ({ list, location }) => {
         list.map(elem => (
           <li key={elem.id}>
             <Link
-              to={{ pathname: `/movie/${elem.id}`, state: { from: location } }}
+              to={{
+                pathname: `/movie/${elem.id}`,
+                state: { from: location }
+              }}
             >
               {elem.title || elem.original_title || elem.original_name}
             </Link>

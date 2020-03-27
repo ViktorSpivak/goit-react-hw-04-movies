@@ -12,7 +12,6 @@ class Reviews extends Component {
   }
 
   render() {
-    const noReviews = "";
     return (
       <ul>
         {this.state.reviewData.length
