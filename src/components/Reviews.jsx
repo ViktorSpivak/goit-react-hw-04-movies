@@ -3,10 +3,10 @@ import { fetchReview } from "./BaseOfRequest";
 
 class Reviews extends Component {
   state = {
-    reviewData: ""
+    reviewData: "",
   };
   componentDidMount() {
-    fetchReview(this.props.match.params.movieId).then(res =>
+    fetchReview(this.props.match.params.movieId).then((res) =>
       this.setState({ reviewData: res })
     );
   }
