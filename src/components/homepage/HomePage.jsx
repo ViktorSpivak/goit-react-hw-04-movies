@@ -1,13 +1,13 @@
 import React, { Component } from "react";
-import { fetchTrendMovies } from "../BaseOfRequest";
-import FilmList from "../FilmList";
+import { fetchTrendMovies } from "../baseOfRequest/BaseOfRequest";
+import FilmList from "../filmList/FilmList";
 
 export class HomePage extends Component {
   state = {
-    trendList: ""
+    trendList: "",
   };
   componentDidMount() {
-    fetchTrendMovies().then(res => this.setState({ trendList: res }));
+    fetchTrendMovies().then((res) => this.setState({ trendList: res }));
   }
 
   render() {

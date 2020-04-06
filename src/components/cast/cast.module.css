@@ -1,0 +1,8 @@
+.castList {
+  display: flex;
+  flex-wrap: wrap;
+}
+.castList__item {
+  width: 10%;
+  word-wrap: break-word;
+}

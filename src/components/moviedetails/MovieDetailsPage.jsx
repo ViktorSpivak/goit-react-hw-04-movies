@@ -1,11 +1,13 @@
 import React, { Component, lazy, Suspense } from "react";
 import { Route, NavLink } from "react-router-dom";
-import { fetchMovieInfo } from "../BaseOfRequest";
+import { fetchMovieInfo } from "../baseOfRequest/BaseOfRequest";
 import style from "./movie.module.css";
 
-const AsyncCast = lazy(() => import("../Cast" /*webpackChunkName:"Cast" */));
+const AsyncCast = lazy(() =>
+  import("../cast/Cast" /*webpackChunkName:"Cast" */)
+);
 const AsyncReviews = lazy(() =>
-  import("../Reviews" /*webpackChunkName:"Reviews" */)
+  import("../review/Reviews" /*webpackChunkName:"Reviews" */)
 );
 
 export class MovieDetailsPage extends Component {
@@ -50,7 +52,10 @@ export class MovieDetailsPage extends Component {
           <div>
             <div className={style.filmInfo}>
               <img
-                src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
+                src={
+                  poster_path &&
+                  `https://image.tmdb.org/t/p/w500/${poster_path}`
+                }
                 alt={original_title}
               />
               <div className={style.filmInfo_text}>

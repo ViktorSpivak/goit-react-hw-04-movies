@@ -1,4 +1,4 @@
-import React, { Component, Fragment, lazy, Suspense } from "react";
+import React, { Component, lazy, Suspense } from "react";
 import { Route, NavLink, Switch } from "react-router-dom";
 import style from "./app.module.css";
 
@@ -17,7 +17,7 @@ const AsyncHomePage = lazy(() =>
 export default class App extends Component {
   render() {
     return (
-      <Fragment>
+      <div>
         <header className={style.header}>
           <NavLink
             to=""
@@ -50,7 +50,7 @@ export default class App extends Component {
             </Switch>
           </Suspense>
         </main>
-      </Fragment>
+      </div>
     );
   }
 }

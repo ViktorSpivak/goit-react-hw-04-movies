@@ -1,12 +1,13 @@
 import React, { Component } from "react";
-import { fetchCast } from "./BaseOfRequest";
+import { fetchCast } from "../baseOfRequest/BaseOfRequest";
+import style from "./cast.module.css";
 
 class Cast extends Component {
   state = {
-    castData: ""
+    castData: "",
   };
   componentDidMount() {
-    fetchCast(this.props.match.params.movieId).then(res =>
+    fetchCast(this.props.match.params.movieId).then((res) =>
       this.setState({ castData: res })
     );
   }
@@ -14,10 +15,10 @@ class Cast extends Component {
   render() {
     const image = { width: "70px" };
     return (
-      <ul>
+      <ul className={style.castList}>
         {this.state.castData &&
           this.state.castData.map((el, idx) => (
-            <li key={idx}>
+            <li key={idx} className={style.castList__item}>
               <div>
                 <img
                   src={`https://image.tmdb.org/t/p/w500/${el.profile_path}`}
